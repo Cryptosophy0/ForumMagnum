@@ -1,6 +1,7 @@
 name: Run Unit Tests
 on:
   push:
+    branches: [na]
   pull_request:
     branches-ignore:
       - ea-deploy
