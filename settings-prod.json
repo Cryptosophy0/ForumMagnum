@@ -1,22 +1,21 @@
 {
   "public": {
-    "forumType": "Cryptosophy",
-    "title": "Cryptosophy Forum",
+    "forumType": "LessWrong",
+    "title": "LessWrong",
     "tagline": "A community blog devoted to refining the art of rationality",
     "logoUrl": "https://res.cloudinary.com/lesswrong-2-0/image/upload/f_png/LessWrong_Logo_skglnw.svg",
-    "siteNameWithArticle": "The Cryptosophy Forum",
-    "siteUrl": "https://cryptosophyforum.com",
-    "aboutPostId": "WBXJNEgFkisChoupA",
+    "siteNameWithArticle": "LessWrong",
+    "siteUrl": "http://localhost:3000",
+    "aboutPostId": "dummyId",
     "faviconUrl": "https://res.cloudinary.com/lesswrong-2-0/image/upload/v1497915096/favicon_lncumn.ico",
     "forumSettings": {
-      "headerTitle": "Cryptosophy Forum",
-      "shortForumTitle": "CF",
-      "tabTitle": "Cryptosophy"
+      "headerTitle": "LESSWRONG",
+      "shortForumTitle": "LW",
+      "tabTitle": "LessWrong"
     },
     "analytics": {
-      "environment": "production"
+      "environment": "localhost"
     },
-    "testServer": false
+    "testServer": true
   }
 }
-
