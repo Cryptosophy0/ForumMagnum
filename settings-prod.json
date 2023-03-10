@@ -1,0 +1,22 @@
+{
+  "public": {
+    "forumType": "Cryptosophy",
+    "title": "Cryptosophy Forum",
+    "tagline": "A community blog devoted to refining the art of rationality",
+    "logoUrl": "https://res.cloudinary.com/lesswrong-2-0/image/upload/f_png/LessWrong_Logo_skglnw.svg",
+    "siteNameWithArticle": "The Cryptosophy Forum",
+    "siteUrl": "https://cryptosophyforum.com",
+    "aboutPostId": "WBXJNEgFkisChoupA",
+    "faviconUrl": "https://res.cloudinary.com/lesswrong-2-0/image/upload/v1497915096/favicon_lncumn.ico",
+    "forumSettings": {
+      "headerTitle": "Cryptosophy Forum",
+      "shortForumTitle": "CF",
+      "tabTitle": "Cryptosophy"
+    },
+    "analytics": {
+      "environment": "production"
+    },
+    "testServer": false
+  }
+}
+
