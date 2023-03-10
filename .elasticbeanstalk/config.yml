@@ -1,13 +1,13 @@
 branch-defaults:
-  lw-devel:
-    environment: LessestWrong
-  ea-dev:
-    environment: EAForum-Staging-2
+  cf-deploy:
+    environment: cf-production
+  cf-staging:
+    environment: cf-staging
 global:
   # Use deploy.sh to change this to the correct application name
-  application_name: APPLICATION_NAME
+  application_name: cryptosophy_forum
   branch: null
-  default_platform: Docker
+  default_platform: Docker running on 64bit Amazon Linux 2
   default_region: us-east-1
   include_git_submodules: true
   instance_profile: null
