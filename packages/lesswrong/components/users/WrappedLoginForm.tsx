@@ -51,7 +51,7 @@ const styles = (theme: ThemeType): JssStyles => ({
   },
   oAuthBlock: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     '&.ea-forum': {
       maxWidth: 400,
       justifyContent: 'space-around',
@@ -189,9 +189,9 @@ const WrappedLoginFormDefault = ({ startingState = "login", classes }: WrappedLo
       {forumTypeSetting.get() !== 'EAForum' && <>
         <div className={classes.oAuthComment}>...or continue with</div>
         <div className={classes.oAuthBlock}>
-          <a className={classes.oAuthLink} href={`/auth/facebook?returnTo=${pathname}`}>FACEBOOK</a>
+          {/* <a className={classes.oAuthLink} href={`/auth/facebook?returnTo=${pathname}`}>FACEBOOK</a> */}
           <a className={classes.oAuthLink} href={`/auth/google?returnTo=${pathname}`}>GOOGLE</a>
-          <a className={classes.oAuthLink} href={`/auth/github?returnTo=${pathname}`}>GITHUB</a>
+          {/* <a className={classes.oAuthLink} href={`/auth/github?returnTo=${pathname}`}>GITHUB</a> */}
         </div>
       </>}
       {error && <div className={classes.error}>{error.message}</div>}
