@@ -42,26 +42,27 @@ jobs:
           echo "SETTINGS_FILE_NAME=settings-staging.json" >> $GITHUB_ENV
           echo "Added staging environment variable(s)"
 
-      - uses: actions/checkout@v2
+      - name: Setup Python
       - uses: actions/setup-python@v2
         with:
           python-version: ">=3.5"
 
+      - name: Install aws eb cli
       - run: pip3 install --upgrade pip awsebcli
 
       - name: Substitute placeholder environment variables with repository-configured values
         run: |
-          sed -i.bak "s|secrets\.MONGO_URL|${{ env.MONGO_URL }}|" docker-compose.yml
-          sed -i.bak "s|secrets\.SETTINGS_FILE_NAME|${{ env.SETTINGS_FILE_NAME }}|" docker-compose.yml
-          sed -i.bak "s|secrets\.IMAGE_TAG|${{ steps.git.outputs.SHA }}|" docker-compose.yml
-          sed -i.bak "s|secrets\.SMTP_USER|${{ secrets.SMTP_USER }}|" docker-compose.yml
-          sed -i.bak "s|secrets\.SMTP_PASSWORD|${{ secrets.SMTP_PASSWORD }}|" docker-compose.yml
+          sed -i.bak "s|secrets\.MONGO_URL|${{ env.MONGO_URL }}|" docker-compose.yaml
+          sed -i.bak "s|secrets\.SETTINGS_FILE_NAME|${{ env.SETTINGS_FILE_NAME }}|" docker-compose.yaml
+          sed -i.bak "s|secrets\.IMAGE_TAG|${{ steps.git.outputs.SHA }}|" docker-compose.yaml
+          sed -i.bak "s|secrets\.SMTP_USER|${{ secrets.SMTP_USER }}|" docker-compose.yaml
+          sed -i.bak "s|secrets\.SMTP_PASSWORD|${{ secrets.SMTP_PASSWORD }}|" docker-compose.yaml
 
-      - name: Include the modified docker-compose.yml in the to-be-deployed changes
+      - name: Include the modified docker-compose.yaml in the to-be-deployed changes
         run: |
           git config --global user.name github_action
           git config --global user.email github_action@github.com
-          git add docker-compose.yml
+          git add docker-compose.yaml
       - name: Execute deployment
         run: |
           rm Dockerfile
