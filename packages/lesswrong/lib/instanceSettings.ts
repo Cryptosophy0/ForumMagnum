@@ -110,13 +110,14 @@ export class PublicInstanceSetting<SettingValueType> {
   Public Instance Settings
 */
 
-export type ForumTypeString = "LessWrong"|"AlignmentForum"|"EAForum";
-export const allForumTypes: Array<ForumTypeString> = ["LessWrong","AlignmentForum","EAForum"];
+export type ForumTypeString = "LessWrong"|"AlignmentForum"|"EAForum"|"CryptosophyForum";
+export const allForumTypes: Array<ForumTypeString> = ["LessWrong","AlignmentForum","EAForum", "CryptosophyForum"];
 export const forumTypeSetting = new PublicInstanceSetting<ForumTypeString>('forumType', 'LessWrong', 'warning') // What type of Forum is being run, {LessWrong, AlignmentForum, EAForum}
 
 export const isLW = forumTypeSetting.get() === "LessWrong"
 export const isEAForum = forumTypeSetting.get() === "EAForum"
 export const isAF = forumTypeSetting.get() === "AlignmentForum"
+export const isCF = forumTypeSetting.get() === "CryptosophyForum"
 
 export const forumTitleSetting = new PublicInstanceSetting<string>('title', 'LessWrong', 'warning') // Default title for URLs
 

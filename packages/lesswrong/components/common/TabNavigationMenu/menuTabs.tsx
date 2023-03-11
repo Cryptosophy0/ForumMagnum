@@ -1,11 +1,16 @@
 import React from 'react';
 
 import { compassIcon } from '../../icons/compassIcon';
+import { heliosIcon } from '../../icons/heliosIcon';
 import { questionsGlobeIcon } from '../../icons/questionsGlobeIcon';
 import { conceptsIcon } from '../../icons/conceptsIcon';
 import { communityGlobeIcon } from '../../icons/communityGlobeIcon';
 import { BookIcon } from '../../icons/bookIcon'
 import { allPostsIcon } from '../../icons/allPostsIcon';
+import { ciHome } from "../../icons/ciHome";
+import { ciGrid32 } from "../../icons/ciGrid32";
+import { ciViewTable } from "../../icons/ciViewTable";
+import { ciMap } from "../../icons/ciMap";
 
 
 import Home from '@material-ui/icons/Home'
@@ -157,6 +162,117 @@ export const menuTabs: ForumOptions<Array<MenuTab>> = {
       mobileTitle: 'Community',
       link: communityPath,
       icon: communityGlobeIcon,
+      tooltip: 'Find a meetup near you.',
+      showOnMobileStandalone: true,
+      showOnCompressed: true,
+    }, {
+      id: 'eventsList',
+      customComponentName: "EventsList",
+    }, {
+      id: 'divider',
+      divider: true,
+      showOnCompressed: true,
+    }, {
+      id: 'subscribeWidget',
+      customComponentName: "SubscribeWidget",
+    }, {
+      id: 'about',
+      title: 'About',
+      link: '/about',
+      subItem: true,
+      compressedIconComponent: Info,
+      showOnCompressed: true,
+    }, {
+      id: 'faq',
+      title: 'FAQ',
+      link: '/faq',
+      subItem: true,
+    }
+  ],
+  CryptosophyForum: [
+    {
+      id: 'home',
+      title: 'Home',
+      link: '/',
+      icon: ciHome,
+      tooltip: 'Latest posts, comments and curated content.',
+      showOnMobileStandalone: true,
+      showOnCompressed: true,
+    }, {
+      id: 'allPosts',
+      title: 'All Posts',
+      link: '/allPosts',
+      icon: ciViewTable,
+      tooltip: 'See all posts, filtered and sorted however you like.',
+      showOnMobileStandalone: true,
+      showOnCompressed: true,
+    }, 
+    // {
+    //   id: 'concepts',
+    //   title: 'Concepts',
+    //   mobileTitle: 'Concepts',
+    //   link: '/tags/all',
+    //   icon: conceptsIcon,
+    //   tooltip: <div>
+    //     Get an overview over all the concepts used on LessWrong
+    //   </div>,
+    //   showOnMobileStandalone: true,
+    //   showOnCompressed: true,
+    // }, 
+    {
+      id: 'library',
+      title: 'Library',
+      link: '/library',
+      icon: ciGrid32,
+      tooltip: "Curated collections of LessWrong's best writing.",
+      showOnMobileStandalone: true,
+      showOnCompressed: true,
+    // next 3 are subItems
+    }, 
+    // {
+    //   id: 'highlights',
+    //   title: 'Sequence Highlights',
+    //   link: '/highlights',
+    //   tooltip: "A curated selection of Eliezer's sequences, covering important background material for participating in the LessWrong community (50 posts, approx. 7 hour read)",
+    //   subItem: true,
+    // }, {
+    //   id: 'r-az',
+    //   title: 'Rationality: A-Z',
+    //   link: '/rationality',
+    //   tooltip: <div>
+    //     <p>
+    //       LessWrong was founded by Eliezer Yudkowsky. For two years he wrote a blogpost a day about topics including rationality, science, ambition and artificial intelligence.
+    //     </p>
+    //     <p>
+    //       Those posts have been edited down into this introductory collection, recommended for new users.
+    //     </p>
+    //   </div>,
+    //   subItem: true,
+    // }, {
+    //   id: 'codex',
+    //   title: 'The Codex',
+    //   link: '/codex',
+    //   tooltip: 'The Codex is a collection of essays written by Scott Alexander that discuss how good reasoning works, how to learn from the institution of science, and different ways society has been and could be designed.',
+    //   subItem: true,
+    // }, {
+    //   id: 'hpmor',
+    //   title: 'HPMOR',
+    //   link: '/hpmor',
+    //   tooltip: 'What if Harry Potter was a scientist? What would you do if the universe had magic in it? A story that illustrates many rationality concepts.',
+    //   subItem: true,
+    // }, 
+    {
+      id: 'bestoflesswrong',
+      title: 'Best Of',
+      link: '/bestoflesswrong',
+      tooltip: "Top posts from the Annual Review (2018 through " + REVIEW_YEAR + ")",
+      subItem: true,
+    }, {
+      id: 'events',
+      title: 'Community Events', // Events hide on mobile
+      mobileTitle: 'Community',
+      link: communityPath,
+      icon: ciMap,
       tooltip: 'Find a meetup near you.',
       showOnMobileStandalone: true,
       showOnCompressed: true,
