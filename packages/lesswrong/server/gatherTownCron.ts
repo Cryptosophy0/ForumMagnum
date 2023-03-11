@@ -24,17 +24,17 @@ const currentGatherTownTrackerVersion = 7;
 const minGatherTownTrackerVersion = new DatabaseServerSetting<number>("gatherTownTrackerVersion", currentGatherTownTrackerVersion);
 
 if (isProduction && forumTypeSetting.get() === "LessWrong") {
-  onStartup(() => {
-    if (currentGatherTownTrackerVersion >= minGatherTownTrackerVersion.get()) {
-      addCronJob({
-        name: 'gatherTownBot'+currentGatherTownTrackerVersion,
-        interval: "every 3 minutes",
-        job() {
-          void pollGatherTownUsers();
-        }
-      });
-    }
-  });
+  // onStartup(() => {
+  //   if (currentGatherTownTrackerVersion >= minGatherTownTrackerVersion.get()) {
+  //     addCronJob({
+  //       name: 'gatherTownBot'+currentGatherTownTrackerVersion,
+  //       interval: "every 3 minutes",
+  //       job() {
+  //         void pollGatherTownUsers();
+  //       }
+  //     });
+  //   }
+  // });
 }
 
 const pollGatherTownUsers = async () => {
