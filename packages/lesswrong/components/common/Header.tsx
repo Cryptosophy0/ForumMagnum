@@ -69,7 +69,8 @@ const styles = (theme: ThemeType): JssStyles => ({
     marginRight: theme.spacing.unit,
   },
   siteLogo: {
-    marginLeft: -theme.spacing.unit * 1.5,
+    // marginLeft: ,
+    marginRight: theme.spacing.unit * 0.5,
   },
   hideLgUp: {
     [theme.breakpoints.up('lg')]: {
@@ -249,7 +250,8 @@ const Header = ({standaloneNavigationPresent, toggleStandaloneNavigation, stayAt
     </React.Fragment>
   }
 
-  const hasLogo = forumTypeSetting.get() === 'EAForum'
+  // const hasLogo = forumTypeSetting.get() === 'EAForum' || forumTypeSetting.get() === 'CryptosophyForum'
+  const hasLogo = true
 
   const {
     SearchBar, UsersMenu, UsersAccountMenu, NotificationsMenuButton, NavigationDrawer,
