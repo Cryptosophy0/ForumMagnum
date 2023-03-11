@@ -13,7 +13,7 @@ import { DatabasePublicSetting } from '../publicSettings';
 import type { ToCData } from '../../server/tableOfContents';
 import sanitizeHtml from 'sanitize-html';
 
-export const logoUrlSetting = new DatabasePublicSetting<string | null>('logoUrl', null)
+export const logoUrlSetting = new DatabasePublicSetting<string | null>('logoUrl', 'https://res.cloudinary.com/dkwnm9fry/image/upload/v1678563853/Logo5_nhzj2h.png')
 
 interface UtilsType {
   // In lib/helpers.ts
