@@ -16,5 +16,5 @@ COPY scripts/postinstall.sh scripts/postinstall.sh
 # save the layer diff
 RUN yarn install && yarn cache clean
 COPY . .
-EXPOSE 8080
+EXPOSE 3000
 CMD [ "yarn", "run", "production" ]
