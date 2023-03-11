@@ -1,7 +1,8 @@
-name: Build and push and deploy image staging
+
+name: Deploy prod
 on:
   push:
-    branches: [cf-staging]
+    branches: [cf-prod]
 jobs:
   build:
     name: Build Image and push
@@ -36,11 +37,11 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       # Deploy new image to eb ----
-      - name: Configure environment variables for staging
+      - name: Configure environment variables for prod
         run: |
-          echo "MONGO_URL=${{ secrets.MONGO_URL_STAGING }}" >> $GITHUB_ENV
-          echo "SETTINGS_FILE_NAME=settings-staging.json" >> $GITHUB_ENV
-          echo "Added staging environment variable(s)"
+          echo "MONGO_URL=${{ secrets.MONGO_URL_PROD }}" >> $GITHUB_ENV
+          echo "SETTINGS_FILE_NAME=settings-prod.json" >> $GITHUB_ENV
+          echo "Added prod environment variable(s)"
 
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
