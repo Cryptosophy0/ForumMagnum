@@ -97,6 +97,11 @@ const postsPerWeek = forumSelect<Record<string, number>>({
     '75': 7,
     '125': 2,
   },
+  CryptosophyForum: {
+    '2': 10,
+    '30': 2,
+    '45': 1,
+  },
   AlignmentForum: {
     '2': 10,
     '30': 2,
