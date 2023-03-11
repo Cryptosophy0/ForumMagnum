@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  application:
+    image: '749081953656.dkr.ecr.us-east-1.amazonaws.com/cryptosophyforum:secrets.IMAGE_TAG'
+    ports:
+      - "80:3000"
+    environment:
+      - "MONGO_URL=secrets.MONGO_URL"
+      - "SMTP_USER=secrets.SMTP_USER"
+      - "SMTP_PASSWORD=secrets.SMTP_PASSWORD"
+      - "SETTINGS_FILE_NAME=secrets.SETTINGS_FILE_NAME"

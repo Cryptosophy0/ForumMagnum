@@ -63,7 +63,10 @@ jobs:
           git config --global user.email github_action@github.com
           git add docker-compose.yml
       - name: Execute deployment
-        run: eb deploy --verbose --staged --timeout 20
+        run: |
+          rm Dockerfile
+          git add Dockerfile
+          eb deploy --verbose --staged --timeout 20
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
