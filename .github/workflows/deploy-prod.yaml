@@ -44,12 +44,12 @@ jobs:
           echo "Added prod environment variable(s)"
 
       - name: Setup Python
-      - uses: actions/setup-python@v2
+        uses: actions/setup-python@v2
         with:
           python-version: ">=3.5"
 
       - name: Install aws eb cli
-      - run: pip3 install --upgrade pip awsebcli
+        run: pip3 install --upgrade pip awsebcli
 
       - name: Substitute placeholder environment variables with repository-configured values
         run: |
