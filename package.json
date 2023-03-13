@@ -271,6 +271,7 @@
     "react-dom": "^16.13.1",
     "react-geosuggest": "^2.8.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.8.0",
     "react-instantsearch": "^6.1.0",
     "react-instantsearch-core": "^6.8.1",
     "react-instantsearch-dom": "^6.8.1",
