@@ -5,7 +5,7 @@ import { userOwns } from '../../vulcan-users/permissions';
 import { ReviewYear } from '../../reviewUtils';
 
 export interface RecommendationsAlgorithm {
-  method: "top"|"sample"
+  method: "top"|"sample"|"startHere"
   count?: number
   scoreOffset: number
   scoreExponent: number

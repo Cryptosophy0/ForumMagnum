@@ -8,12 +8,14 @@ import { setUserPartiallyReadSequences } from './partiallyReadSequences';
 import { addGraphQLMutation, addGraphQLQuery, addGraphQLResolvers, addGraphQLSchema } from './vulcan-lib';
 import { WeightedList } from './weightedList';
 import type { RecommendationsAlgorithm } from '../lib/collections/users/recommendationSettings';
-import { forumTypeSetting } from '../lib/instanceSettings';
+import { forumTypeSetting, PublicInstanceSetting } from '../lib/instanceSettings';
 import SelectQuery from "../lib/sql/SelectQuery";
 import { getPositiveVoteThreshold } from '../lib/reviewUtils';
 import { getDefaultViewSelector } from '../lib/utils/viewUtils';
+import { startHerePostIdSetting } from '../lib/collections/posts/constants';
 
 const isEAForum = forumTypeSetting.get() === 'EAForum'
+const startHerePostIdsSetting = new PublicInstanceSetting<string>('startHerePostIds', 'bJ2haLkcGeLtTWaD5', "warning") // Start here posts ids
 
 const MINIMUM_BASE_SCORE = 50
 
@@ -267,6 +269,25 @@ const samplePosts = async ({count, currentUser, algorithm, sampleWeightFn}: {
   ).fetch();
 }
 
+
+// Returns the start here posts.
+//   count: The maximum number of posts to return. May return fewer, if there
+//     aren't enough recommendable unread posts in the database.
+//   currentUser: The user who is requesting the recommendations, or null if
+//     logged out.
+//   algorithm: Used for inclusion criteria
+const startHerePosts = async ({count, currentUser, algorithm}: {
+  count: number,
+  currentUser: DbUser|null,
+  algorithm: RecommendationsAlgorithm,
+}) => {
+  const startHerePostIds = startHerePostIdsSetting.get().split(',');
+
+  return (await Posts.find(
+    { _id: {$in: startHerePostIds} },
+  ).fetch()).sort((a, b) => startHerePostIds.indexOf(a._id) - startHerePostIds.indexOf(b._id));
+}
+
 const getModifierName = (post: DbPost) => {
   if (post.curatedDate) return 'curatedModifier'
   if (post.frontpageDate) return 'frontpageModifier'
@@ -297,6 +318,11 @@ const getRecommendedPosts = async ({count, algorithm, currentUser}: {
         count, currentUser, algorithm,
         sampleWeightFn: scoreFn,
       });
+    }
+    case "startHere": {
+      return await startHerePosts({
+        count, currentUser, algorithm,
+      })
     }
     default: {
       throw new Error(`Unrecognized recommendation algorithm: ${algorithm.method}`);
