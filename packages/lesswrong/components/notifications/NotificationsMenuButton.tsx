@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import Badge from '@material-ui/core/Badge';
 import { registerComponent } from '../../lib/vulcan-lib';
 import IconButton from '@material-ui/core/IconButton';
+import { CiBellOn } from "react-icons/ci";
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import * as _ from 'underscore';
@@ -50,7 +51,8 @@ const NotificationsMenuButton = ({ unreadNotifications, open, toggle, currentUse
         classes={{ root: buttonClass }}
         onClick={toggle}
       >
-        {(unreadNotifications>0) ? <NotificationsIcon /> : <NotificationsNoneIcon />}
+        {/* {(unreadNotifications>0) ? <NotificationsIcon /> : <NotificationsNoneIcon />} */}
+        <CiBellOn style={{height: "25px", width: "25px"}} />
       </IconButton>
     </Badge>
   )

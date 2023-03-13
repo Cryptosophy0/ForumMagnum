@@ -2,7 +2,8 @@ import React from 'react';
 import { registerComponent, Components } from '../../lib/vulcan-lib';
 import { Hits, Configure, Index, InstantSearch, SearchBox, CurrentRefinements } from 'react-instantsearch-dom';
 import { getAlgoliaIndexName, isAlgoliaEnabled, getSearchClient } from '../../lib/algoliaUtil';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
+import { CiSearch as SearchIcon } from "react-icons/ci";
 import { useLocation } from '../../lib/routeUtil';
 import { taggingNameIsSet, taggingNamePluralCapitalSetting } from '../../lib/instanceSettings';
 
@@ -53,7 +54,9 @@ const styles = (theme: ThemeType): JssStyles => ({
     }
   },
   searchIcon: {
-    marginLeft: 12
+    marginLeft: 12,
+    height: "25px",
+    width: "25px"
   },
   searchInputArea: {
     display: "flex",

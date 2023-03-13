@@ -31,7 +31,7 @@ import { DisableNoKibitzContext } from './UsersNameDisplay';
 
 const styles = (theme: ThemeType): JssStyles => ({
   root: {
-    marginTop: 5,
+    marginTop: 6,
     wordBreak: 'break-all',
     position: "relative"
   },

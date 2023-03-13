@@ -9,7 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { Link } from '../../lib/reactRouterWrapper';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Badge from '@material-ui/core/Badge';
-import StarIcon from '@material-ui/icons/Star';
+import { CiStar as StarIcon} from "react-icons/ci";
+// import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { postGetPageUrl } from '../../lib/collections/posts/helpers';
 import { commentGetPageUrlFromIds } from '../../lib/collections/comments/helpers';
@@ -32,6 +33,8 @@ const styles = (theme: ThemeType): JssStyles => ({
   },
   starIcon: {
     color: theme.palette.header.text,
+    height: "25px",
+    width: "25px"
   },
   title: {
     display: 'block',
@@ -271,7 +274,7 @@ const KarmaChangeNotifier = ({currentUser, classes}: {
         <div ref={anchorEl}>
           <IconButton onClick={handleToggle} className={classes.karmaNotifierButton}>
             {starIsHollow
-              ? <StarBorderIcon className={classes.starIcon}/>
+              ? <StarIcon className={classes.starIcon}/>
               : <Badge badgeContent={<span className={classes.pointBadge}><ColoredNumber n={totalChange} classes={classes}/></span>}>
                   <StarIcon className={classes.starIcon}/>
                 </Badge>

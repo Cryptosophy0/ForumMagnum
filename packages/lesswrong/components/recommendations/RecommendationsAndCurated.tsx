@@ -58,7 +58,7 @@ const styles = (theme: ThemeType): JssStyles => ({
     fontStyle: "italic"
   },
   posts: {
-    boxShadow: theme.palette.boxShadow.default,
+    // boxShadow: theme.palette.boxShadow.default,
   },
   curated: {
     marginTop: 12

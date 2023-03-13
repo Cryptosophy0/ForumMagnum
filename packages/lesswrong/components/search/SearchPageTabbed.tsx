@@ -9,7 +9,8 @@ import { forumTypeSetting, taggingNameIsSet, taggingNamePluralCapitalSetting, ta
 import { Link } from '../../lib/reactRouterWrapper';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
-import SearchIcon from '@material-ui/icons/Search';
+import { CiSearch as SearchIcon } from "react-icons/ci"
+// import SearchIcon from '@material-ui/icons/Search';
 import InfoIcon from '@material-ui/icons/Info';
 import moment from 'moment';
 
@@ -78,7 +79,9 @@ const styles = (theme: ThemeType): JssStyles => ({
     flex: '1 1 0',
   },
   searchIcon: {
-    marginLeft: 12
+    marginLeft: 12,
+    height: "25px",
+    width: "25px"
   },
   searchBoxRow: {
     display: "flex",

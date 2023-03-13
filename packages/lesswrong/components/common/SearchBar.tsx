@@ -3,7 +3,8 @@ import { registerComponent, Components } from '../../lib/vulcan-lib';
 import { routerOnUpdate } from '../hooks/useOnNavigate';
 import { InstantSearch, SearchBox, connectMenu } from 'react-instantsearch-dom';
 import classNames from 'classnames';
-import SearchIcon from '@material-ui/icons/Search';
+import { CiSearch as SearchIcon } from "react-icons/ci";
+// import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
 import Portal from '@material-ui/core/Portal';
 import { withLocation, withNavigation } from '../../lib/routeUtil';
@@ -77,6 +78,8 @@ const styles = (theme: ThemeType): JssStyles => ({
   searchIcon: {
     position: 'fixed',
     margin: '12px',
+    height: "25px",
+    width: "25px"
   },
   closeSearchIcon: {
     fontSize: 14,
@@ -207,7 +210,7 @@ class SearchBar extends Component<SearchBarProps,SearchBarState> {
           )}>
             {alignmentForum && <VirtualMenu attribute="af" defaultRefinement="true" />}
             <div onClick={this.handleSearchTap}>
-              <SearchIcon className={classes.searchIcon}/>
+              <SearchIcon className={classes.searchIcon} />
               {/* Ignored because SearchBox is incorrectly annotated as not taking null for its reset prop, when
                 * null is the only option that actually suppresses the extra X button.
                // @ts-ignore */}
