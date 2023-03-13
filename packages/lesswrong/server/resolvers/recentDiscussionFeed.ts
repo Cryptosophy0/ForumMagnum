@@ -100,22 +100,23 @@ defineFeedResolver<Date>({
             editedAt: {$exists: true},
           },
         }),
+        // CRYPTOSOPHY: Don't show subscribe reminder or meetups poke
         // Suggestion to subscribe to curated
-        fixedIndexSubquery({
-          type: "subscribeReminder",
-          index: forumTypeSetting.get() === 'EAForum' ? 3 : 6,
-          result: {},
-        }),
+        // fixedIndexSubquery({
+        //   type: "subscribeReminder",
+        //   index: forumTypeSetting.get() === 'EAForum' ? 3 : 6,
+        //   result: {},
+        // }),
         
-        // Suggestion to subscribe to meetups
-        ...(shouldSuggestMeetupSubscription ?
-          [fixedIndexSubquery({
-            type: "meetupsPoke",
-            index: 8,
-            result: {},
-          })]
-          : []
-        ),
+        // // Suggestion to subscribe to meetups
+        // ...(shouldSuggestMeetupSubscription ?
+        //   [fixedIndexSubquery({
+        //     type: "meetupsPoke",
+        //     index: 8,
+        //     result: {},
+        //   })]
+        //   : []
+        // ),
       ],
     });
   }

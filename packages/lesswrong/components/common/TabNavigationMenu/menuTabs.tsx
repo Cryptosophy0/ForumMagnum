@@ -219,16 +219,16 @@ export const menuTabs: ForumOptions<Array<MenuTab>> = {
     //   showOnMobileStandalone: true,
     //   showOnCompressed: true,
     // }, 
-    {
-      id: 'library',
-      title: 'Library',
-      link: '/library',
-      icon: ciGrid32,
-      tooltip: "Curated collections of LessWrong's best writing.",
-      showOnMobileStandalone: true,
-      showOnCompressed: true,
-    // next 3 are subItems
-    }, 
+    // {
+    //   id: 'library',
+    //   title: 'Library',
+    //   link: '/library',
+    //   icon: ciGrid32,
+    //   tooltip: "Curated collections of LessWrong's best writing.",
+    //   showOnMobileStandalone: true,
+    //   showOnCompressed: true,
+    // // next 3 are subItems
+    // }, 
     // {
     //   id: 'highlights',
     //   title: 'Sequence Highlights',
@@ -261,25 +261,27 @@ export const menuTabs: ForumOptions<Array<MenuTab>> = {
     //   tooltip: 'What if Harry Potter was a scientist? What would you do if the universe had magic in it? A story that illustrates many rationality concepts.',
     //   subItem: true,
     // }, 
+    // {
+    //   id: 'bestoflesswrong',
+    //   title: 'Best Of',
+    //   link: '/bestoflesswrong',
+    //   tooltip: "Top posts from the Annual Review (2018 through " + REVIEW_YEAR + ")",
+    //   subItem: true,
+    // }, 
+    // {
+    //   id: 'events',
+    //   title: 'Community Events', // Events hide on mobile
+    //   mobileTitle: 'Community',
+    //   link: communityPath,
+    //   icon: ciMap,
+    //   tooltip: 'Find a meetup near you.',
+    //   showOnMobileStandalone: true,
+    //   showOnCompressed: true,
+    // }, {
+    //   id: 'eventsList',
+    //   customComponentName: "EventsList",
+    // }, 
     {
-      id: 'bestoflesswrong',
-      title: 'Best Of',
-      link: '/bestoflesswrong',
-      tooltip: "Top posts from the Annual Review (2018 through " + REVIEW_YEAR + ")",
-      subItem: true,
-    }, {
-      id: 'events',
-      title: 'Community Events', // Events hide on mobile
-      mobileTitle: 'Community',
-      link: communityPath,
-      icon: ciMap,
-      tooltip: 'Find a meetup near you.',
-      showOnMobileStandalone: true,
-      showOnCompressed: true,
-    }, {
-      id: 'eventsList',
-      customComponentName: "EventsList",
-    }, {
       id: 'divider',
       divider: true,
       showOnCompressed: true,
