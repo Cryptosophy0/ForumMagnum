@@ -85,6 +85,12 @@ const getFrontPageOverwrites = (haveCurrentUser: boolean): Partial<Recommendatio
   }
 }
 
+const startHereAlgorithm : RecommendationsAlgorithm = {
+  method: "startHere",
+  scoreOffset: 0,
+  scoreExponent: 0
+}
+
 const isLW = forumTypeSetting.get() === 'LessWrong'
 
 const RecommendationsAndCurated = ({
@@ -107,7 +113,7 @@ const RecommendationsAndCurated = ({
 
   const render = () => {
     const { CurrentSpotlightItem, RecommendationsAlgorithmPicker, SingleColumnSection, SettingsButton, ContinueReadingList,
-      RecommendationsList, SectionTitle, SectionSubtitle, BookmarksList, LWTooltip, CuratedPostsList, TargetedJobAdSection } = Components;
+      RecommendationsList, SectionTitle, SectionSubtitle, BookmarksList, LWTooltip, CuratedPostsList, TargetedJobAdSection , Typography} = Components;
 
     const settings = getRecommendationSettings({settings: settingsState, currentUser, configName})
     const frontpageRecommendationSettings: RecommendationsAlgorithm = {
@@ -139,6 +145,7 @@ const RecommendationsAndCurated = ({
     const renderBookmarks = ((currentUser?.bookmarkedPostsMetadata?.length || 0) > 0) && !settings.hideBookmarks
     const renderContinueReading = currentUser && (continueReading?.length > 0) && !settings.hideContinueReading
     
+    const renderStartHere = true;
     const renderRecommendations = !settings.hideFrontpage
 
     const bookmarksLimit = (settings.hideFrontpage && settings.hideContinueReading) ? 6 : 3 
@@ -180,12 +187,26 @@ const RecommendationsAndCurated = ({
 
         <div className={classes.subsection}>
           <div className={classes.posts}>
+            {renderStartHere && 
+              <AnalyticsContext listContext="frontpageStartHere" pageSubSectionContext="frontpageStartHere" capturePostItemOnMount>
+                <LWTooltip title="Suggested posts for learning more about the Cryptosophy Forum" placement="left">
+                  <Typography variant="body1"><small><b>Start Here</b></small></Typography>
+                </LWTooltip>
+                <RecommendationsList algorithm={startHereAlgorithm} />
+              </AnalyticsContext>
+            }
             {renderRecommendations && 
               <AnalyticsContext listContext="frontpageFromTheArchives" pageSubSectionContext="frontpageFromTheArchives" capturePostItemOnMount>
+                <LWTooltip title="Random sampling of top rated posts from the archives" placement="left">
+                  <Typography variant="body1"><small><b>From the Archives</b></small></Typography>
+                </LWTooltip>
                 <RecommendationsList algorithm={frontpageRecommendationSettings} />
               </AnalyticsContext>
             }
             {forumTypeSetting.get() !== "EAForum" && <div className={classes.curated}>
+              <LWTooltip title="Recently curated posts" placement="left">
+                <Typography variant="body1"><small><b>Curated This Week</b></small></Typography>
+              </LWTooltip>
               <CuratedPostsList />
             </div>}
             {forumTypeSetting.get() === "EAForum" && <TargetedJobAdSection />}
