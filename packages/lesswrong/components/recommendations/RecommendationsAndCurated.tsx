@@ -205,7 +205,7 @@ const RecommendationsAndCurated = ({
             }
             {forumTypeSetting.get() !== "EAForum" && <div className={classes.curated}>
               <LWTooltip title="Recently curated posts" placement="left">
-                <Typography variant="body1"><small><b>Curated This Week</b></small></Typography>
+                <Typography variant="body1"><small><b>Curated Recently</b></small></Typography>
               </LWTooltip>
               <CuratedPostsList />
             </div>}

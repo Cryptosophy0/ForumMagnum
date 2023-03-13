@@ -7,7 +7,7 @@ const RecommendationsList = ({algorithm, translucentBackground}: {
   algorithm: RecommendationsAlgorithm,
   translucentBackground?: boolean
 }) => {
-  const { PostsItem2, PostsLoading, Typography } = Components;
+  const { PostsItem2, PostsLoading, Typography, PostsNoResults } = Components;
   const {recommendationsLoading, recommendations} = useRecommendations(algorithm);
 
   if (recommendationsLoading || !recommendations)
@@ -17,7 +17,7 @@ const RecommendationsList = ({algorithm, translucentBackground}: {
     {recommendations.map(post =>
       <PostsItem2 post={post} key={post._id} translucentBackground={translucentBackground}/>)}
     {recommendations.length===0 &&
-      <Typography variant="body1"><small>Nothing to show.</small></Typography>}
+      <PostsNoResults/>}
   </div>
 }
 

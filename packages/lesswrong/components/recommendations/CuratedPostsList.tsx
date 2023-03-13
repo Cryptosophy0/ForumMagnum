@@ -9,7 +9,7 @@ const CuratedPostsList = () => {
     <AnalyticsContext listContext="curatedPosts" pageSubSectionContext="curatedPosts">
       <Components.PostsList2
         terms={{view:"curated", limit: currentUser ? 3 : 2}}
-        showNoResults={false}
+        showNoResults={true}
         showLoadMore={false}
         hideLastUnread={true}
         boxShadow={false}
