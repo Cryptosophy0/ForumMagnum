@@ -4,7 +4,7 @@
     "title": "Cryptosophy Forum",
     "tagline": "A community forum devoted to refining the art of human coordination",
     "siteNameWithArticle": "The Cryptosophy Forum",
-    "siteUrl": "http://localhost:3000",
+    "siteUrl": "http://localhost:3000/",
     "aboutPostId": "dummyId",
     "faviconUrl": "https://res.cloudinary.com/dkwnm9fry/image/upload/v1678563820/favicon_qe8ebc.ico",
     "forumSettings": {
