@@ -62,7 +62,8 @@ const HomeLatestPosts = ({classes}:{classes: ClassesType}) => {
 
   const {filterSettings, setPersonalBlogFilter, setTagFilter, removeTagFilter} = useFilterSettings()
   // While hiding desktop settings is stateful over time, on mobile the filter settings always start out hidden
-  const [filterSettingsVisibleDesktop, setFilterSettingsVisibleDesktop] = useState(!currentUser?.hideFrontpageFilterSettingsDesktop);
+  // CRYPTOSOPHY: Always hide filter settings
+  const [filterSettingsVisibleDesktop, setFilterSettingsVisibleDesktop] = useState(false);
   const [filterSettingsVisibleMobile, setFilterSettingsVisibleMobile] = useState(false);
   const { timezone } = useTimezone();
   const { captureEvent } = useOnMountTracking({eventType:"frontpageFilterSettings", eventProps: {filterSettings, filterSettingsVisible: filterSettingsVisibleDesktop, pageSectionContext: "latestPosts"}, captureOnMount: true})
@@ -107,7 +108,8 @@ const HomeLatestPosts = ({classes}:{classes: ClassesType}) => {
       <SingleColumnSection>
         <SectionTitle title={latestPostsName} noBottomPadding>
           <LWTooltip title={`Use these buttons to increase or decrease the visibility of posts based on ${taggingNameSetting.get()}. Use the "+" button at the end to add additional ${taggingNamePluralSetting.get()} to boost or reduce them.`}>
-            <SettingsButton
+            {/* CRYPTOSOPHY: Don't Show Settings Button */}
+            {/* <SettingsButton
               className={classes.hideOnMobile}
               label={filterSettingsVisibleDesktop ?
                 "Customize Feed (Hide)" :
@@ -128,7 +130,7 @@ const HomeLatestPosts = ({classes}:{classes: ClassesType}) => {
                   settings: filterSettings,
                   pageSectionContext: "latestPosts"
                 })
-              }} />
+              }} /> */}
           </LWTooltip>
         </SectionTitle>
   
