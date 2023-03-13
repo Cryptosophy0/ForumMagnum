@@ -13,7 +13,7 @@ const CuratedPostsList = () => {
         showLoadMore={false}
         hideLastUnread={true}
         boxShadow={false}
-        curatedIconLeft={true}
+        curatedIconLeft={false}
         showFinalBottomBorder
       />
     </AnalyticsContext>
