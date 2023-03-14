@@ -383,7 +383,7 @@ const welcomeMessageDelayer = new EventDebouncer({
   // something, and derailing them with a bunch of stuff to read at that
   // particular moment could be bad.
   // CRYPTOSOPHY: Changing to 1 minute delay in order to avoid issues with cloud run instances shutting down
-  defaultTiming: {type: "delayed", delayMinutes: 1 },
+  defaultTiming: {type: "delayed", delayMinutes: 60 },
   
   callback: (userId: string, events: string[]) => {
     void sendWelcomeMessageTo(userId);
@@ -431,6 +431,8 @@ async function sendWelcomeMessageTo(userId: string) {
     participantIds: [user._id, adminsAccount._id],
     title: subjectLine,
   }
+  
+  // No idea what this code does
   const conversation = await createMutator({
     collection: Conversations,
     document: conversationData,
