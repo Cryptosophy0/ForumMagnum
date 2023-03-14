@@ -382,7 +382,8 @@ const welcomeMessageDelayer = new EventDebouncer({
   // accounts are often doing so because they're about to write a comment or
   // something, and derailing them with a bunch of stuff to read at that
   // particular moment could be bad.
-  defaultTiming: {type: "delayed", delayMinutes: 60 },
+  // CRYPTOSOPHY: Changing to 1 minute delay in order to avoid issues with cloud run instances shutting down
+  defaultTiming: {type: "delayed", delayMinutes: 1 },
   
   callback: (userId: string) => {
     void sendWelcomeMessageTo(userId);
