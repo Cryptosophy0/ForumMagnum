@@ -133,11 +133,15 @@ const RecommendationsAndCurated = ({
     // Disabled during 2018 Review [and coronavirus]
     const recommendationsTooltip = <div>
       <div>
-        {forumTypeSetting.get() === 'EAForum' ?
+        Assorted suggested reading, including some suggested 
+        posts for learning more about the cryptosophy forum,
+        a random sampling of top rated posts from the archives,
+        and recently curated posts.
+        {/* {forumTypeSetting.get() === 'EAForum' ?
           'Assorted suggested reading, including some of the ' :
           'Recently curated posts, as well as a random sampling of '}
         top-rated posts of all time
-        {settings.onlyUnread && " that you haven't read yet"}.
+        {settings.onlyUnread && " that you haven't read yet"}. */}
       </div>
       <div><em>(Click to see more recommendations)</em></div>
     </div>
