@@ -14,8 +14,9 @@
       "tabTitle": "Cryptosophy Forum"
     },
     "analytics": {
-      "environment": "production"
+      "environment": "staging"
     },
+    "disallowCrawlers": true,
     "testServer": false
   }
 }
