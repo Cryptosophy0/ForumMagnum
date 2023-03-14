@@ -76,7 +76,7 @@ const AllTagsPage = ({classes}: {
       <div className={classes.root}>
         <div className={classes.topSection}>
           <AnalyticsContext pageSectionContext="tagPortal">
-            <ToCColumn
+            {/* <ToCColumn
               tableOfContents={tag ? <TagTableOfContents
                 tag={tag} showContributors={false}
                 displayOptions={{
@@ -132,10 +132,10 @@ const AllTagsPage = ({classes}: {
                   />
                 }
               </ContentStyles>
+            </ToCColumn> */}
               <AnalyticsContext pageSectionContext="allTagsAlphabetical">
                 <AllTagsAlphabetical />
               </AnalyticsContext>
-            </ToCColumn>
           </AnalyticsContext>
         </div>
       </div>
