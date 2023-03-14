@@ -385,7 +385,7 @@ const welcomeMessageDelayer = new EventDebouncer({
   // CRYPTOSOPHY: Changing to 1 minute delay in order to avoid issues with cloud run instances shutting down
   defaultTiming: {type: "delayed", delayMinutes: 1 },
   
-  callback: (userId: string) => {
+  callback: (userId: string, events: string[]) => {
     void sendWelcomeMessageTo(userId);
   },
 });
