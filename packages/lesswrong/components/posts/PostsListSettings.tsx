@@ -71,6 +71,24 @@ const FILTERS_ALL: ForumOptions<Partial<Record<Filters, SettingsOption>>> = {
       tooltip: "Events from around the world."
     },
   },
+  "CryptosophyForum": {
+    all: {
+      label: "All Posts",
+      tooltip: "Includes personal blogposts as well as frontpage, questions, and community posts."
+    },
+    frontpage: {
+      label: "Frontpage",
+      tooltip: "Posts about research and other work in high-impact cause areas."
+    },
+    questions: {
+      label: "Questions",
+      tooltip: "Open questions and answers, ranging from newcomer questions to important unsolved scientific problems."
+    },
+    events: {
+      label: "Events",
+      tooltip: "Events from around the world."
+    },
+  },
   "default": {
     all: {
       label: "All Posts",

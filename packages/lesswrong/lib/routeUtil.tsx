@@ -147,6 +147,11 @@ const forumDomainWhitelist: ForumOptions<Array<string>> = {
     'ea.greaterwrong.com',
     `localhost:${getServerPort()}`,
   ],
+  CryptosophyForum: [
+    'cryptosophyforum.com',
+    'staging.cryptosophyforum.com',
+    `localhost:${getServerPort()}`
+  ],
   default: [
     `localhost:${getServerPort()}`,
   ],

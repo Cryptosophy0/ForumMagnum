@@ -250,8 +250,7 @@ const Header = ({standaloneNavigationPresent, toggleStandaloneNavigation, stayAt
     </React.Fragment>
   }
 
-  // const hasLogo = forumTypeSetting.get() === 'EAForum' || forumTypeSetting.get() === 'CryptosophyForum'
-  const hasLogo = true
+  const hasLogo = forumTypeSetting.get() === 'EAForum' || forumTypeSetting.get() === 'CryptosophyForum'
 
   const {
     SearchBar, UsersMenu, UsersAccountMenu, NotificationsMenuButton, NavigationDrawer,

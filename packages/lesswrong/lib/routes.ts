@@ -1056,6 +1056,39 @@ const forumSpecificRoutes = forumSelect<Route[]>({
       background: postBackground
     },
   ],
+  CryptosophyForum: [
+    {
+      name:'home',
+      path:'/',
+      componentName: 'Home2',
+      enableResourcePrefetch: true,
+      sunshineSidebar: true //TODO: remove this in production?
+    },
+    {
+      name:'about',
+      path:'/about',
+      componentName: 'PostsSingleRoute',
+      _id: aboutPostIdSetting.get(),
+      getPingback: async (parsedUrl) => await getPostPingbackById(parsedUrl, aboutPostIdSetting.get()),
+      background: postBackground
+    },
+    {
+      name: 'faq',
+      path: '/faq',
+      componentName: 'PostsSingleRoute',
+      _id: faqPostIdSetting.get(),
+      getPingback: async (parsedUrl) => await getPostPingbackById(parsedUrl, faqPostIdSetting.get()),
+      background: postBackground
+    },
+    {
+      name: 'contact',
+      path:'/contact',
+      componentName: 'PostsSingleRoute',
+      _id: contactPostIdSetting.get(),
+      getPingback: async (parsedUrl) => await getPostPingbackById(parsedUrl, contactPostIdSetting.get()),
+      background: postBackground
+    },
+  ],
   default: [
     {
       name:'home',
