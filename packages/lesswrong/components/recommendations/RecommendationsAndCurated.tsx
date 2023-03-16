@@ -193,7 +193,7 @@ const RecommendationsAndCurated = ({
           <div className={classes.posts}>
             {renderStartHere && 
               <AnalyticsContext listContext="frontpageStartHere" pageSubSectionContext="frontpageStartHere" capturePostItemOnMount>
-                <LWTooltip title="Suggested posts for learning more about the Cryptosophy Forum" placement="left">
+                <LWTooltip title="Suggested posts for learning more about Cryptosophy" placement="left">
                   <Typography variant="body1"><small><b>Start Here</b></small></Typography>
                 </LWTooltip>
                 <RecommendationsList algorithm={startHereAlgorithm} />

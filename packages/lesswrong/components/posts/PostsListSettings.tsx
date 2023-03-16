@@ -71,7 +71,7 @@ const FILTERS_ALL: ForumOptions<Partial<Record<Filters, SettingsOption>>> = {
       tooltip: "Events from around the world."
     },
   },
-  "CryptosophyForum": {
+  "Cryptosophy": {
     all: {
       label: "All Posts",
       tooltip: "Includes personal blogposts as well as frontpage, questions, and community posts."

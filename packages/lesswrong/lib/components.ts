@@ -16,7 +16,7 @@ if(forumTypeSetting.get() === 'AlignmentForum') {
   importComponent("AlignmentForumHome", () => require('../components/alignment-forum/AlignmentForumHome'));
 }
 
-if (forumTypeSetting.get() === 'EAForum' || forumTypeSetting.get() === 'CryptosophyForum') {
+if (forumTypeSetting.get() === 'EAForum' || forumTypeSetting.get() === 'Cryptosophy') {
   importComponent("EAHome", () => require('../components/ea-forum/EAHome'));
   importComponent("EAHomeCommunityPosts", () => require('../components/ea-forum/EAHomeCommunityPosts'));
   importComponent("EATermsOfUsePage", () => require('../components/ea-forum/EATermsOfUsePage'));

@@ -1056,7 +1056,7 @@ const forumSpecificRoutes = forumSelect<Route[]>({
       background: postBackground
     },
   ],
-  CryptosophyForum: [
+  Cryptosophy: [
     {
       name:'home',
       path:'/',

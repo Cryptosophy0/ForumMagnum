@@ -116,7 +116,7 @@ const RecentDiscussionSubscribeReminder = ({classes}: {
   const [loading, setLoading] = useState(false);
   const { flash } = useMessages();
   const {WrappedLoginForm, SignupSubscribeToCurated, Loading, AnalyticsInViewTracker } = Components;
-  const subscriptionDescription = '(2-3 posts per week, selected by the Cryptosophy Forum moderation team.)';
+  const subscriptionDescription = '(2-3 posts per week, selected by the Cryptosophy moderation team.)';
   const { captureEvent } = useTracking({eventProps: {pageElementContext: "subscribeReminder"}});
   
   // Show admins a random version of the widget. Makes sure we notice if it's intrusive/bad.

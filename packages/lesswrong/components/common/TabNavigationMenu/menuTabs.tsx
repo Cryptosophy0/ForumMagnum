@@ -189,7 +189,7 @@ export const menuTabs: ForumOptions<Array<MenuTab>> = {
       subItem: true,
     }
   ],
-  CryptosophyForum: [
+  Cryptosophy: [
     {
       id: 'home',
       title: 'Home',

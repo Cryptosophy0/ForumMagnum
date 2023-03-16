@@ -264,7 +264,7 @@ const Layout = ({currentUser, children, classes}: {
               <AnalyticsClient/>
               <AnalyticsPageInitializer/>
               <NavigationEventSender/>
-              {/* CRYPTOSOPHYFORUM: Disable Intercom */}
+              {/* CRYPTOSOPHY: Disable Intercom */}
               {/* <IntercomWrapper/> */}
 
               <noscript className="noscript-warning"> This website requires javascript to properly function. Consider activating javascript to get access to all site functionality. </noscript>
