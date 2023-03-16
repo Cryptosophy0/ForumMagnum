@@ -1,16 +1,16 @@
 {
   "public": {
-    "forumType": "CryptosophyForum",
-    "title": "Cryptosophy Forum",
-    "tagline": "A community forum devoted to refining the art of human coordination",
-    "siteNameWithArticle": "The Cryptosophy Forum",
+    "forumType": "Cryptosophy",
+    "title": "Cryptosophy",
+    "tagline": "A community blog devoted to refining the art of human coordination",
+    "siteNameWithArticle": "The Cryptosophy",
     "siteUrl": "http://localhost:3000/",
     "aboutPostId": "dummyId",
     "faviconUrl": "https://res.cloudinary.com/cryptosophyforum/image/upload/v1678563820/favicon_qe8ebc.ico",
     "forumSettings": {
-      "headerTitle": "Cryptosophy Forum",
-      "shortForumTitle": "CF",
-      "tabTitle": "Cryptosophy Forum"
+      "headerTitle": "Cryptosophy",
+      "shortForumTitle": "C",
+      "tabTitle": "Cryptosophy"
     },
     "analytics": {
       "environment": "localhost"

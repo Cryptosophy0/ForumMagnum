@@ -1,17 +1,17 @@
 {
   "public": {
-    "forumType": "CryptosophyForum",
-    "title": "Cryptosophy Forum",
-    "tagline": "A community forum devoted to refining the art of human coordination",
-    "siteNameWithArticle": "The Cryptosophy Forum",
-    "siteUrl": "https://staging.cryptosophyforum.com/",
+    "forumType": "Cryptosophy",
+    "title": "Cryptosophy",
+    "tagline": "A community blog devoted to refining the art of human coordination",
+    "siteNameWithArticle": "Cryptosophy",
+    "siteUrl": "https://staging.cryptosophy.xyz/",
     "aboutPostId": "rocw8zLoJw5cNmGg3",
     "startHerePostIds": "rocw8zLoJw5cNmGg3,kmpnydPnFvqsNx9r4",
     "faviconUrl": "https://res.cloudinary.com/cryptosophyforum/image/upload/v1678563820/favicon_qe8ebc.ico",
     "forumSettings": {
-      "headerTitle": "Cryptosophy Forum",
-      "shortForumTitle": "CF",
-      "tabTitle": "Cryptosophy Forum"
+      "headerTitle": "Cryptosophy",
+      "shortForumTitle": "C",
+      "tabTitle": "Cryptosophy"
     },
     "analytics": {
       "environment": "staging"
