@@ -199,14 +199,14 @@ const RecommendationsAndCurated = ({
                 <RecommendationsList algorithm={startHereAlgorithm} />
               </AnalyticsContext>
             }
-            {renderRecommendations && 
+            {/* {renderRecommendations && 
               <AnalyticsContext listContext="frontpageFromTheArchives" pageSubSectionContext="frontpageFromTheArchives" capturePostItemOnMount>
                 <LWTooltip title="Random sampling of top rated posts from the archives" placement="left">
                   <Typography variant="body1"><small><b>From the Archives</b></small></Typography>
                 </LWTooltip>
                 <RecommendationsList algorithm={frontpageRecommendationSettings} />
               </AnalyticsContext>
-            }
+            } */}
             {forumTypeSetting.get() !== "EAForum" && <div className={classes.curated}>
               <LWTooltip title="Recently curated posts" placement="left">
                 <Typography variant="body1"><small><b>Curated Recently</b></small></Typography>
